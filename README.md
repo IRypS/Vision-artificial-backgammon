@@ -19,6 +19,7 @@ Diseño de Soluciones de Inteligencia Artificial - H51
 - numpy
 - openCV
   
+`pip install -r requirements.txt`
 
 ## Características principales   
 
