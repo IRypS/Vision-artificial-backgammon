@@ -1,0 +1,60 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'images/app_background.jpg'
+
+    Image:
+        source: 'images/backgammon_logo.png'
+        size_hint_y: 1
+        size_hint_x: 1
+
+    MDLabel:
+        text: 'Proyecto de visión artificial (Grupo 12)'
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+        halign: 'center'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: self.minimum_height
+        spacing: '10dp'  # Ajusta el espacio vertical entre los botones
+
+        MDFillRoundFlatButton:
+            text: 'Contar fichas por colores'
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1  # Color del texto del botón
+            md_bg_color: app.theme_cls.primary_color  # Color de fondo del botón
+            size_hint: 0.8, None
+            size: "150dp", "40dp"
+            pos_hint: {"center_x": 0.5}
+            on_release: app.workCountPiecesByColor()
+
+        MDFillRoundFlatButton:
+            text: 'Contar fichas por grupo'
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1  # Color del texto del botón
+            md_bg_color: app.theme_cls.primary_color  # Color de fondo del botón
+            size_hint: 0.8, None
+            size: "150dp", "40dp"
+            pos_hint: {"center_x": 0.5}
+            on_release: app.workCountPiecesByGroup()
+
+        MDFillRoundFlatButton:
+            text: 'Contar fichas por columna'
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1  # Color del texto del botón
+            md_bg_color: app.theme_cls.primary_color  # Color de fondo del botón
+            size_hint: 0.8, None
+            size: "150dp", "40dp"
+            pos_hint: {"center_x": 0.5}
+            on_release: app.workCountPiecesByColumn()
+
+    
+    BoxLayout:
+        orientation: 'vertical'
+        height: "180dp"

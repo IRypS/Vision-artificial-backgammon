@@ -1,0 +1,61 @@
+BoxLayout:
+    orientation: 'horizontal'
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'images/app_background.jpg'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 1
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: None, 1
+        width: 400 # Aquí puedes poner el ancho que desees
+
+        BoxLayout:
+            orientation: 'vertical'
+
+        Image:
+            source: 'images/backgammon_logo.png'
+            size_hint_y: 1
+            size_hint_x: 1
+            anchor_x: 'right'
+
+        MDLabel:
+            text: 'Proyecto de visión artificial (Grupo 12)'
+            theme_text_color: "Custom"
+            text_color: 0, 0, 0, 1
+            halign: 'center'
+
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            height: "250dp"
+            spacing: "10dp"
+            padding: ('50dp', '10dp')
+
+            MDRaisedButton:
+                text: 'Contar fichas por colores'
+                on_release: app.workCountPiecesByColor()
+                md_bg_color: 0, 0.686, 0.639, 1
+                size_hint: 1, None
+
+            MDRaisedButton:
+                text: 'Contar fichas por grupo'
+                on_release: app.workCountPiecesByGroup()
+                md_bg_color: 0.831, 0.349, 0.184, 1
+                size_hint: 1, None
+
+            MDRaisedButton:
+                text: 'Contar fichas por columna'
+                on_release: app.workCountPiecesByColumn()
+                md_bg_color: 0.122, 0.443, 0.596, 1
+                size_hint: 1, None
+
+
+        BoxLayout:
+            orientation: 'vertical'
